@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/pflag"
+	apflag "github.com/spf13/pflag"
 )
 
 func main() {
 	// 创建一个新的FlagSet实例用于分组
-	serverFlags := pflag.NewFlagSet("server", pflag.ExitOnError)
+	serverFlags := apflag.NewFlagSet("server", apflag.ExitOnError)
 
 	// 定义属于"server"分组的变量
 	var (
@@ -22,7 +22,7 @@ func main() {
 	serverFlags.StringVarP(&serverAddr, "addr", "a", "localhost", "Server address")
 
 	// 创建另一个FlagSet实例用于分组
-	clientFlags := pflag.NewFlagSet("client", pflag.ExitOnError)
+	clientFlags := apflag.NewFlagSet("client", apflag.ExitOnError)
 
 	// 定义属于"client"分组的变量
 	var (
